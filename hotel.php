@@ -96,6 +96,18 @@ $hotels = [
                 <?php } ?>
             </tbody>
         </table>
+        <div class="container">
+            <div class="input-group mb-3 d-flex justify-content-center">
+                <form class="input-group-text" action="hotel.php" method="GET">
+                    <h4 class="px-3">Filtra i risultati:</h4><br>
+                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                    <h5 class="px-3">Parcheggio Disponibile</h5>
+                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
+                    <h5 class="px-3">Voto 3+</h5>
+                    <button type="submit" class="btn btn-dark">Applica Filtri</button>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

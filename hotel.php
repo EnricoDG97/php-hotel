@@ -56,45 +56,44 @@ $hotels = [
 </head>
 
 <body>
-    <div class="container">
+    <div class="container text-center">
         <table class="table mt-5">
             <thead>
                 <tr>
                     <th scope="col">HOTELS</th>
                     <?php foreach ($hotels as $hotel) { ?>
                         <th scope="col">
-                            <?php echo $hotel['name'] ?>
+                            <?php echo $hotel['name']; ?>
                         </th>
                     <?php } ?>
                 </tr>
             </thead>
 
             <tbody>
-                <?php foreach ($hotels as $key => $hotel) { ?>
-                    <tr>
-                        <th scope="row">
-                        <?php echo $key; ?>
-                        </th>
-                    </tr>
+                <?php foreach ($hotels[1] as $key => $value) { ?>
+                    <?php if ($key !== 'name') { ?>
+                        <tr>
+                            <th scope="row">
+                                <?php
+                                $key_uc = ucfirst($key);
+                                echo str_replace('_', ' ', $key_uc);
+                                ?>
+                            </th>
+                            <?php foreach ($hotels as $hotel) { ?>
+                                <td>
+                                    <?php
+                                    $value = $hotel[$key];
+                                    if (is_bool($value)) {
+                                        echo $value ? 'Disponibile' : 'Non disponibile';
+                                    } else {
+                                        echo $value;
+                                    }
+                                    ?>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    <?php } ?>
                 <?php } ?>
-
-                <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr> -->
             </tbody>
         </table>
     </div>

@@ -42,6 +42,18 @@ $hotels = [
 
 // test
 // var_dump($hotels[0]['name']);
+
+
+if(isset($_GET['check_parking'])) {
+    $check_parking = $_GET['check_parking'];
+    // var_dump($check_parking);
+}
+
+if(isset($_GET['check_vote_3'])) {
+    $check_vote_3 = $_GET['check_vote_3'];
+    // var_dump($check_vote_3);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -100,11 +112,11 @@ $hotels = [
             <div class="input-group mb-3 d-flex justify-content-center">
                 <form class="input-group-text" action="hotel.php" method="GET">
                     <h4 class="px-3">Filtra i risultati:</h4><br>
-                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                    <h5 class="px-3">Parcheggio Disponibile</h5>
-                    <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">
-                    <h5 class="px-3">Voto 3+</h5>
-                    <button type="submit" class="btn btn-dark">Applica Filtri</button>
+                    <label for="check_parking" class="px-3">Parcheggio Disponibile</label>
+                    <input name="check_parking" id="check_parking" class="form-check-input mt-0" type="checkbox" value='true'>
+                    <label for="check_vote_3" class="px-3">Voto 3+</label>
+                    <input name="check_vote_3" id="check_vote_3" class="form-check-input mt-0" type="checkbox" value='true'>
+                    <button type="submit" class="btn btn-dark mx-3">Applica Filtri</button>
                 </form>
             </div>
         </div>
